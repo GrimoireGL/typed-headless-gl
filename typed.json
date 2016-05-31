@@ -1,0 +1,5 @@
+{
+  "name": "headless-gl",
+  "main": "headless-gl.d.ts",
+  "ambientDependencies": {}
+}

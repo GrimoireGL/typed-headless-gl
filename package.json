@@ -1,0 +1,22 @@
+{
+  "name": "typed-headless-gl",
+  "version": "1.0.0",
+  "description": "The type definition for typescript of headless-gl.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jThreeJS/typed-headless-gl.git"
+  },
+  "keywords": [
+    "webgl"
+  ],
+  "author": "LimeStreem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jThreeJS/typed-headless-gl/issues"
+  },
+  "homepage": "https://github.com/jThreeJS/typed-headless-gl#readme"
+}
