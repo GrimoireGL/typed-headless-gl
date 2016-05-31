@@ -1,26 +1,27 @@
 declare module "gl" {
-    export default function(width: number, height: number, options?: HeadlessGLOptions): WebGLRenderingContext;
-}
 
-interface WebGLRenderingContext {
-    getExtension(extName: "STACKGL_resize_drawingbuffer"): STACKGL_resize_drawingbuffer;
-    getExtension(extName: "STACKGL_destroy_context"): STACKGL_destroy_context;
-}
+    interface STACKGL_resize_drawingbuffer {
+        resize(width: GLint, height: GLint): void;
+    }
 
-interface STACKGL_resize_drawingbuffer {
-    resize(width: GLint, height: GLint): void;
-}
+    interface STACKGL_destroy_context {
+        destroy(): void;
+    }
 
-interface STACKGL_destroy_context {
-    destroy(): void;
-}
+    interface HeadlessGLOptions {
+        alpha?: boolean;
+        depth?: boolean;
+        stencil?: boolean;
+        premultipliedAlpha?: boolean;
+        preserveDrawingBuffer?: boolean;
+        preferLowPowerToHighPerformance?: boolean;
+        failIfMajorPerformanceCaveat?: boolean;
+    }
 
-interface HeadlessGLOptions {
-    alpha?: boolean;
-    depth?: boolean;
-    stencil?: boolean;
-    premultipliedAlpha?: boolean;
-    preserveDrawingBuffer?: boolean;
-    preferLowPowerToHighPerformance?: boolean;
-    failIfMajorPerformanceCaveat?: boolean;
+    interface HeadlessWebGLRenderingContext extends WebGLRenderingContext {
+        getExtension(extName: "STACKGL_resize_drawingbuffer"): STACKGL_resize_drawingbuffer;
+        getExtension(extName: "STACKGL_destroy_context"): STACKGL_destroy_context;
+    }
+
+    export default function(width: number, height: number, options?: HeadlessGLOptions): HeadlessWebGLRenderingContext;
 }
